@@ -262,7 +262,6 @@ class Worker:
         """Determine if a file or directory can be rendered.
 
         Args:
-
             dst_relpath:
                 Relative path to destination.
             is_dir:
@@ -432,7 +431,6 @@ class Worker:
         """Render one file.
 
         Args:
-
             src_abspath:
                 The absolute path to the file that will be rendered.
         """

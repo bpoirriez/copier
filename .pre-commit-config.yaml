@@ -43,6 +43,7 @@ repos:
       - id: isort
       - id: flake8
       - id: pydocstyle
+        exclude: tests/
       - id: poetry-check
       - id: check-ast
       - id: check-builtin-literals
@@ -50,4 +51,9 @@ repos:
       - id: debug-statements
       - id: fix-encoding-pragma
       - id: name-tests-test
+        args: [--pytest-test-first]
+        exclude: |
+          (?x)
+          tests/helpers.py|
+          tests/demo_.*/
       - id: requirements-txt-fixer

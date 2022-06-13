@@ -58,11 +58,14 @@ VCSTypes = Literal["git"]
 
 
 class AllowArbitraryTypes:
+    """Pydantic configuration to allow arbitrary types."""
+
     arbitrary_types_allowed = True
 
 
 # Validators
 def path_is_absolute(value: Path) -> Path:
+    """Pydantic validator to check if a path is absolute."""
     if not value.is_absolute():
         from .errors import PathNotAbsoluteError
 
@@ -71,6 +74,7 @@ def path_is_absolute(value: Path) -> Path:
 
 
 def path_is_relative(value: Path) -> Path:
+    """Pydantic validator to check if a path is relative."""
     if value.is_absolute():
         from .errors import PathNotRelativeError
 
@@ -85,12 +89,16 @@ if TYPE_CHECKING:
 else:
 
     class AbsolutePath(Path):
+        """Data type that validates an absolute path."""
+
         @classmethod
         def __get_validators__(cls) -> "CallableGenerator":
             yield path_validator
             yield path_is_absolute
 
     class RelativePath(Path):
+        """Data type that validates a relative path."""
+
         @classmethod
         def __get_validators__(cls) -> "CallableGenerator":
             yield path_validator

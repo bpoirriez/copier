@@ -8,15 +8,9 @@ from dataclasses import field
 from hashlib import sha512
 from os import urandom
 from pathlib import Path
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Callable,
-    ChainMap as t_ChainMap,
-    Dict,
-    List,
-    Union,
-)
+from typing import TYPE_CHECKING, Any, Callable
+from typing import ChainMap as t_ChainMap
+from typing import Dict, List, Union
 
 import yaml
 from jinja2 import UndefinedError
@@ -132,6 +126,7 @@ class AnswersMap:
         )
 
     def old_commit(self) -> OptStr:
+        """Get commit used to render the template the last time."""
         return self.last.get("_commit")
 
 

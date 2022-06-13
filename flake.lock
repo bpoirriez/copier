@@ -169,11 +169,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1654930733,
-        "narHash": "sha256-kfGwpprTfcg/j8ZUT25fd7wy5WKvxikNUVy3JNPN1Yc=",
+        "lastModified": 1655105784,
+        "narHash": "sha256-R78t7ISV+IfbZgfCBMwQTgHwjgY2bkyemBjHEISdq+U=",
         "owner": "moduon%2Fdevsecops",
         "repo": "precommix",
-        "rev": "93016661d171f1635fb095470072c6b59a5ba42f",
+        "rev": "8d8c8d8d811a072456ce8eb6af330d58dacfc998",
         "type": "gitlab"
       },
       "original": {

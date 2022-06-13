@@ -1,3 +1,4 @@
+"""Helpers for development tasks."""
 import os
 import shutil
 from pathlib import Path
@@ -5,9 +6,7 @@ from subprocess import check_call
 
 
 def clean():
-    """
-    Clean build, test or other process artefacrts from the project workspace
-    """
+    """Clean build, test or other process artifacts from the project workspace."""
     build_artefacts = (
         "build/",
         "dist/",
@@ -33,7 +32,7 @@ def clean():
 
 
 def dev_setup():
-    """Setup a development environment."""
+    """Set up a development environment."""
     # Gitpod sets PIP_USER=yes, which breaks poetry
     env = dict(os.environ, PIP_USER="no")
     check_call(["poetry", "install", "--extras", "docs"], env=env)
